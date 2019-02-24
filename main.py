@@ -29,14 +29,16 @@ def scrape():
 
     print(json.dumps(mars_data, sort_keys=True, indent=4))
 
-    mongo_write.write_to_db(mars_data)
+    mongo_mars.write_to_db(mars_data)
 
-    return json.dumps(mars_data, sort_keys=True, indent=4)
+    json_dict = mongo_mars.read_DB()
+
+    return jsonify(result=json_dict)
 
 @app.route("/data")
 def data():
 
-    json_dict = mongo_write.read_DB()
+    json_dict = mongo_mars.read_DB()
 
     return jsonify(result=json_dict)
 
