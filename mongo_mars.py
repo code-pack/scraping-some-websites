@@ -1,10 +1,5 @@
-
-
-
 import pymongo
 import json
-
-
 
 def write_to_db(input):
     
@@ -34,6 +29,7 @@ def write_to_db(input):
         print(e)
         return -1
 
+
 def read_DB():
 
     output = {}
@@ -59,8 +55,3 @@ def read_DB():
         print(e)
   
     return output
-
-    
-
-
-

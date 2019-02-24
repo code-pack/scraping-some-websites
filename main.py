@@ -5,7 +5,7 @@ import json
 from flask import jsonify
 
 import scrape_mars as scrape_mars
-import mongo_write as mongo_write
+import mongo_mars as mongo_mars
 
 app = Flask(__name__)
 
