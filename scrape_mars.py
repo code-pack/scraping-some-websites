@@ -14,7 +14,7 @@ import fileinput
 
 import os
 
-def scrape_mars():
+def scrape_mars_func():
 
     # ## Step 1 - Scraping
 
@@ -310,7 +310,7 @@ def scrape_mars():
         hemisphere_image_urls.append(dict_tmp)
 
 
-
+    print('\n')
 
     print(hemisphere_image_urls)
 

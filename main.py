@@ -23,7 +23,7 @@ def home():
 def scrape():
 
     print('[########] Scraping...\n')
-    mars_data = scrape_mars.scrape_mars()
+    mars_data = scrape_mars.scrape_mars_func()
 
     print('\n[########] Data scraped.\n')
 
