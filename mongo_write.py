@@ -34,6 +34,32 @@ def write_to_db(input):
         print(e)
         return -1
 
+def read_DB():
+
+    output = {}
+    
+    try:
+        # setup mongo connection
+        conn = "mongodb://localhost:27017"
+        myclient = pymongo.MongoClient(conn)
+
+        mydb = myclient["mars"]
+
+        mycol = mydb["weather"]
+
+        output_list = []
+
+        for x in mycol.find({},{ "_id": 0}):
+            output_list.append(x)
+
+        output = output_list[0]
+
+        
+    except Exception as e:
+        print(e)
+  
+    return output
+
     
 
 

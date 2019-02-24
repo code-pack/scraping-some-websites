@@ -2,6 +2,8 @@
 from flask import Flask, jsonify, render_template
 import json
 
+from flask import jsonify
+
 import scrape_mars as scrape_mars
 import mongo_write as mongo_write
 
@@ -29,7 +31,14 @@ def scrape():
 
     mongo_write.write_to_db(mars_data)
 
-    return 'Done Scraping.'
+    return json.dumps(mars_data, sort_keys=True, indent=4)
+
+@app.route("/data")
+def data():
+
+    json_dict = mongo_write.read_DB()
+
+    return jsonify(result=json_dict)
 
 if __name__ == '__main__':
     app.run(debug=True)

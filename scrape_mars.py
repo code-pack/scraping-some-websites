@@ -65,7 +65,7 @@ def scrape_mars():
             #print(link)
             
             # Run only if title, price, and link are available
-            if (news_title and news_p and link):
+            if (news_title and news_p and news_link):
                 # Print results
                 #print('-------------')
                 #print(news_title)
