@@ -1,20 +1,9 @@
 
+from flask import Flask, jsonify, render_template
+import json
 
 import scrape_mars as scrape_mars
-
-
-import datetime as dt
-import numpy as np
-import pandas as pd
-import sqlalchemy
-
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-from flask import Flask, jsonify, render_template
-from datetime import datetime as dt2
-
-import json
+import mongo_write as mongo_write
 
 app = Flask(__name__)
 
@@ -26,21 +15,21 @@ def home():
     return render_template('index.html')
 
 
-#### Precipitation API response ####
+#### Scraping API ####
 
 @app.route("/scrape")
 def scrape():
 
-    
-    print('scraping')
+    print('[########] Scraping...\n')
     mars_data = scrape_mars.scrape_mars()
-    print('scrapped')
-    #print(mars_data)
+
+    print('\n[########] Data scraped.\n')
 
     print(json.dumps(mars_data, sort_keys=True, indent=4))
-    return 'done'
 
+    mongo_write.write_to_db(mars_data)
 
+    return 'Done Scraping.'
 
 if __name__ == '__main__':
     app.run(debug=True)
