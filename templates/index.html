@@ -12,21 +12,31 @@
     </head>
 
     <body>
-        <div class="jumbotron jumbotron-fluid">
+        <!-- <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Hawaii Climate Analysis API</h1>
-                <p class="lead">by joelsotelods</p>
+                <h1 class="display-4"></h1>
+                <p class="lead">by @joelsotelods</p>
             </div>
+        </div> -->
+
+
+
+        <div class="container text-center">
+            <h1 class="jumbotron">Ultimate Mars News</h1>
+
+            <h2 href="{{ mars_data["posts_list"][0]["news_link"] }}">{{ mars_data["posts_list"][0]["news_title"] }}</h2>
+            <h4>{{ mars_data["posts_list"][0]["news_p"] }}</h4>
+  
         </div>
 
-
+        <br><br>
 
         <div class="container">
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-12">
                     <div class="text-center">
-                        <img src="https://www.nationalgeographic.com/content/dam/adventure/photos/2017/stories/eric-sterman-aerial-surfing/aerial-seven-mile-miracle-north-shore-hawaii-aerial.adapt.1900.1.jpg" class="img-fluid" alt="Responsive image">
+                        <img src="{{ mars_data["featured_image_url"] }}" class="img-fluid" alt="Responsive image">
                     </div>
                     
                 </div>
@@ -34,7 +44,10 @@
             </div>
         </div>
 
+     
         <br>
+        <div w3-include-html="table.html"></div>
+        <iframe src="table.html"></iframe>
 
         <div class="container">
             <div class="row">
@@ -68,7 +81,10 @@
 
 
         <br><br><br>
-   
+
+
+        <br><br><br>
+
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

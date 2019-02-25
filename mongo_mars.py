@@ -15,11 +15,11 @@ def write_to_db(input):
         x = mycol.delete_many({})
         print(x.deleted_count, " documents deleted.")
 
-        print(input)
+        #print(input)
         x = mycol.insert_one(input)
 
         #print list of the _id values of the inserted documents:
-        print(x.inserted_id)
+        #print(x.inserted_id)
 
         for x in mycol.find():
             print(x)

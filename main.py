@@ -14,7 +14,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('index.html')
+    json_dict = mongo_mars.read_DB()
+    return render_template('index.html', mars_data=json_dict)
 
 
 #### Scraping API ####
