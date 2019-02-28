@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
     <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+        <title>Ultimate Mars News</title>
     </head>
 
     <body>
@@ -31,51 +31,149 @@
 
         <br><br>
 
+        
+        
+        <div class="container">
+        <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="text-center">
+                        <h3>Featured Mars Image</h3>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="text-center">
+                        <img src="{{ mars_data['featured_image_url'] }}" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+     
+        <br>
+
+        
         <div class="container">
             <div class="row">
                 <div class="col-1"></div>
-                <div class="col-12">
+                <div class="col-5">
                     <div class="text-center">
-                        <img src="{{ mars_data["featured_image_url"] }}" class="img-fluid" alt="Responsive image">
+                        {{ mars_data['mars_weather'] }}
                     </div>
-                    
+                </div>
+                <div class="col-5">
+                    {{ space_facts }}
                 </div>
                 <div class="col-1"></div>
             </div>
         </div>
 
-     
-        <br>
-        <div w3-include-html="table.html"></div>
-        <iframe src="table.html"></iframe>
-
+ 
         <div class="container">
+            <br>
+            <br>
             <div class="row">
-                <div class="col-4">Precipitation</div>
-                <div class="col-4">List of precepitation values from the dataset.</div>
-                <div class="col-4">/api/v1/prcp</div>
+                <div class="col-12">
+                    <div class="text-center">
+                        <h2>Enhanced</h2>
+                    </div>
+                </div>
             </div>
             <br>
             <div class="row">
-                <div class="col-4">Stations</div>
-                <div class="col-4">List of stations from the dataset.</div>
-                <div class="col-4">/api/v1/stations</div>
+                <div class="col-6">
+                    <div class="text-center">
+                        <img src="{{ mars_data['hemisphere_image_urls'][1]['img_url'] }}" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="text-center">
+                        <img src="{{ mars_data['hemisphere_image_urls'][3]['img_url'] }}" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
             </div>
             <br>
             <div class="row">
-                <div class="col-4">Temperature Observations</div>
-                <div class="col-4">Dates and temperature observations</div>
-                <div class="col-4">/api/v1/tobs</div>
-            </div><br>
+                <div class="col-6">
+                    <div class="text-center">
+                        <img src="{{ mars_data['hemisphere_image_urls'][5]['img_url'] }}" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="text-center">
+                        <img src="{{ mars_data['hemisphere_image_urls'][7]['img_url'] }}" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
             <div class="row">
-                <div class="col-4">Temperature by start date</div>
-                <div class="col-4">See minimum temperature, the average temperature, and the max temperature</div>
-                <div class="col-4">/api/v1/start_date -> /api/v1/yyyy-mm-dd  </div>
-            </div><br>
+                <div class="col-12">
+                    <div class="text-center">
+                        <h2>Unenhanced</h2>
+                    </div>
+                </div>
+            </div>
+            <br>
             <div class="row">
-                <div class="col-4">Temperature by Range of dates</div>
-                <div class="col-4">See minimum temperature, the average temperature, and the max temperature.</div>
-                <div class="col-4">/api/v1/start/end -> /api/v1/yyyy-mm-dd/yyyy-mm-dd</div>
+                <div class="col-6">
+                    <div class="text-center">
+                        <img src="{{ mars_data['hemisphere_image_urls'][0]['img_url'] }}" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="text-center">
+                        <img src="{{ mars_data['hemisphere_image_urls'][2]['img_url'] }}" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <div class="text-center">
+                        <img src="{{ mars_data['hemisphere_image_urls'][4]['img_url'] }}" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="text-center">
+                        <img src="{{ mars_data['hemisphere_image_urls'][6]['img_url'] }}" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+        <br>
+
+            <br>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <h2>API endpoints</h2>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-4">Scrape</div>
+                <div class="col-4">Scrape the information.</div>
+                <div class="col-4">/scrape</div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-4">Get the data</div>
+                <div class="col-4">Get the JSON of the data.</div>
+                <div class="col-4">/data</div>
             </div>
         </div>
 

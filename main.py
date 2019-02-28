@@ -3,6 +3,7 @@ from flask import Flask, jsonify, render_template
 import json
 
 from flask import jsonify
+from flask import Markup
 
 import scrape_mars as scrape_mars
 import mongo_mars as mongo_mars
@@ -15,7 +16,15 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     json_dict = mongo_mars.read_DB()
-    return render_template('index.html', mars_data=json_dict)
+
+    ## Load html table.
+    space_facts_html_file = json_dict['space_facts_html']
+    with open(space_facts_html_file, 'r') as myfile:
+        data = myfile.read().replace('\n', '')
+    
+    html_insert = Markup(data)
+
+    return render_template('index.html', mars_data=json_dict, space_facts=html_insert)
 
 
 #### Scraping API ####
