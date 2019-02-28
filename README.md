@@ -1,6 +1,30 @@
 # scraping-NASA-website
 
-## Step 1 - Scraping
+
+## API endpoints
+
+- **Home:** host/
+- **Scraping:** host/scrape
+- **Get JSON data:** host/data
+
+
+## Screenshots
+
+### Home
+
+![](images/home_1.png)
+![](images/home_2.png)
+![](images/home_3.png)
+![](images/home_4.png)
+![](images/home_5.png)
+
+### Data
+
+![](images/data_1.png)
+
+---
+
+## Scraping
 
 Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
 
